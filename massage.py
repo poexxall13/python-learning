@@ -9,7 +9,7 @@ print ("сеансы" ,sessions)
 
 if discount<=10:
     discount_session = price*discount
-    final_total = sessions*discount_session
+    final_total = total-discount_session
 
 print ("скидка 3%" , discount_session , "руб")
 print ("итоговая стоимость" , final_total , "руб")
