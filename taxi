@@ -1,0 +1,9 @@
+def calculate_taxi(distance,time):
+    if time=="day":
+        if distance <=5:
+            return 200
+        elif distance <=15:
+            return 200 + 30 * (10-5)
+    
+price1 = calculate_taxi(3, "day")
+print("3 км днём:", price1, "руб") 
