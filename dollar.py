@@ -1,9 +1,35 @@
-def usd_to_rub(usd, exchange_rate):
-    rubles: float = usd*exchange_rate
-    return rubles
+def calculate_fine(zone, hours, has_permit):
+    # Если есть разрешение
+    if has_permit == True:
+        return 0
+   
+    # Проверяем зоны
+    if zone == "центр":
+        if hours <= 1:
+            return 500
+        elif hours <= 3:
+            return 1000
+        else:
+            return 2000
+    
+    elif zone == "окраина":
+        if hours <= 2:
+            return 300
+        elif hours <= 5:
+            return 600
+        else:
+            return 1200
+    
+    elif zone == "пригород":
+        if hours <= 3:
+            return 200
+        elif hours <= 6:
+            return 400
+        else:
+            return 800
+    
+    
+    
 
-rub1 = usd_to_rub(100, 95)
-print("100 USD =", rub1, "руб")  # должно быть 9500
-
-rub2 = usd_to_rub(50, 100)
-print("50 USD =", rub2, "руб")
+fine1 = calculate_fine("центр", 2, False)
+print("Центр, 2 ч, без разрешения:", fine1, "руб")
